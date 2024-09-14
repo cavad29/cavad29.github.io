@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parasut Animasyonu</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #87CEEB, #ffffff);
+}
+
+.sky {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parachute {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: descend 5s linear forwards;
+}
+
+@keyframes descend {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 75%; /* Ekranın %75'ine inmesi için */
+  }
+}
+
+.canopy {
+  width: 30vw; /* Ekrana göre boyutlandırma */
+  height: 16vw;
+  background: red;
+  border-radius: 80px 80px 0 0;
+}
+
+.lines {
+  width: 2px;
+  height: 12vw; /* Ekrana göre uyumlu */
+  background: black;
+  margin: 0 auto;
+}
+
+.person {
+  width: 12vw; /* Ekrana göre uyumlu */
+  height: 16vw;
+  background-image: url('./cat.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 10px;
+}
+
+.message {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw; /* Ekrana göre uyumlu */
+  color: black;
+  opacity: 0;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: showMessage 3s ease-in-out forwards;
+  animation-delay: 5s;
+}
+
+@keyframes showMessage {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.continue-button {
+  display: block;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px; /* Ekrana göre boyutlandırma */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 4vw; /* Ekrana göre uyumlu */
+  font-weight: bold;
+  opacity: 0;
+  animation: showButton 3s ease-in-out forwards;
+  animation-delay: 8s;
+}
+
+@keyframes showButton {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive media queries for iPhone 15 Pro (393px width, 852px height) */
+@media (max-width: 393px) {
+  .message {
+    font-size: 4.5vw; /* Küçük ekranlar için boyut */
+  }
+
+  .continue-button {
+    font-size: 4.5vw;
+    padding: 10px 20px;
+  }
+}
+
+
+</style></head>
+<body>
+  <div class="sky">
+    <div class="parachute">
+      <div class="canopy"></div>
+      <div class="lines"></div>
+      <div class="person"></div>
+    </div>
+    <div class="message">
+      Səni çox sevirəm. Mən heç vaxt belə olsun istəmədim, səndə istəməzdin. Bu vəziyyətə gətirdiyim üçün çox üzr istəyirəm.
+    </div>
+    <a href="page2.html" class="continue-button">Davam etmək istəsən gəl</a>
+  </div>
+</body>
+</html>

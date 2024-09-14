@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İkinci Sayfa</title>
+<style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: black; /* Arka plan siyah kalacak */
+  color: white; /* Yazılar beyaz olacak */
+}
+
+.rain {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.drop {
+  position: absolute;
+  top: -100px; /* Ekranın dışından başlar */
+  font-size: 4vw; /* Responsive font boyutu */
+  color: inherit; /* Yazı rengi arka planla uyumlu olacak */
+  animation: rainDrop 10s linear infinite; /* Yağmur animasyonu */
+  opacity: 0;
+}
+
+@keyframes rainDrop {
+  0% {
+    top: -10%; /* Ekranın üstünden başlama noktası */
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    top: 90%; /* Ekranın altına doğru kayma noktası */
+    opacity: 1;
+  }
+  100% {
+    top: 110%; /* Ekranın dışına çıkar */
+    opacity: 0;
+  }
+}
+
+/* Her bir metin için animasyonun farklı zamanlarda başlaması */
+.drop:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.drop:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.drop:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.drop:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.drop:nth-child(5) {
+  animation-delay: 8s;
+}
+
+.drop:nth-child(6) {
+  animation-delay: 10s;
+}
+
+/* Responsive düzenlemeler iPhone 15 Pro için */
+@media (max-width: 393px) {
+  .drop {
+    font-size: 5vw; /* Küçük ekranlarda daha büyük yazı boyutu */
+  }
+}
+
+
+</style></head>
+<body>
+  <div class="rain">
+    <div class="drop">
+      Həyatımda səndən daha çox vacib bir canlı bir quruluş bir cisim yoxdur.
+    </div>
+    <div class="drop">
+      Tək dəyər verdiyim şey sənsən.
+    </div>
+    <div class="drop">
+      Sənin xətrinə dəyəcək heç bir şey demək istəməmişdim.
+    </div>
+    <div class="drop">
+      Heç vaxtda istəmərəm.
+    </div>
+    <div class="drop">
+      Sən 1 pis olsan mən 1000 pis olaram.
+    </div>
+    <div class="drop">
+      Məni bağışla səhvlərimə görə.
+    </div>
+  </div>
+</body>
+</html>
